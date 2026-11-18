@@ -7,5 +7,5 @@ public class ArqSystem {
 
     public SimulationStats transmit(byte[] data) {
         return null;
-    } #plkasoidj
+    }
 }
