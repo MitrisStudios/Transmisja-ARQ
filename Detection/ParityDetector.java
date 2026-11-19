@@ -1,14 +1,16 @@
-/**
- * Bit parzystości (parzysta parzystość, "even parity").
- *
- * Suma kontrolna to jeden bit dobrany tak, żeby łączna liczba jedynek
- * w danych + bicie parzystości była parzysta:
- *   - nieparzysta liczba jedynek w danych -> bit parzystości = 1
- *   - parzysta liczba jedynek w danych    -> bit parzystości = 0
- *
- * Wykrywa każdą NIEPARZYSTĄ liczbę przekłamanych bitów (1, 3, 5, ...).
- * NIE wykrywa parzystej liczby przekłamań (2, 4, ...), bo wtedy
- * liczba jedynek zmienia się o liczbę parzystą i bit się zgadza.
+package Detection;
+
+/*
+  Bit parzystości (parzysta parzystość, "even parity").
+ 
+  Suma kontrolna to jeden bit dobrany tak, żeby łączna liczba jedynek
+  w danych + bicie parzystości była parzysta:
+    - nieparzysta liczba jedynek w danych -> bit parzystości = 1
+    - parzysta liczba jedynek w danych    -> bit parzystości = 0
+ 
+  Wykrywa każdą NIEPARZYSTĄ liczbę przekłamanych bitów (1, 3, 5, ...).
+  NIE wykrywa parzystej liczby przekłamań (2, 4, ...), bo wtedy
+  liczba jedynek zmienia się o liczbę parzystą i bit się zgadza.
  */
 public class ParityDetector implements ErrorDetector {
 

@@ -1,6 +1,6 @@
-/**
- * Wspólny interfejs dla wszystkich modeli kanałów komunikacyjnych
- * (ręczne błędy, kanał BSC, kanał Gilberta-Elliotta).
+/*
+  Wspólny interfejs dla wszystkich modeli kanałów komunikacyjnych
+  (ręczne błędy, kanał BSC, kanał Gilberta-Elliotta).
  */
 public interface Channel {
 

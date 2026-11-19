@@ -1,22 +1,24 @@
-/**
- * CRC-8 (wariant CRC-8/SMBUS).
- *
- * Parametry:
- *   wielomian generujący: x^8 + x^2 + x + 1  ->  0x07
- *                         (bit x^8 jest pomijany, bo zawsze = 1)
- *   wartość początkowa:   0x00
- *   XOR na końcu:         0x00
- *   wartość kontrolna:    CRC("123456789") = 0xF4
- *
- * Idea: dane traktujemy jako jeden długi wielomian binarny, dopisujemy 8 zer
- * i dzielimy (modulo 2, czyli XOR-em) przez wielomian generujący.
- * Reszta z dzielenia (8 bitów) to suma kontrolna.
- *
- * Co wykrywa:
- *   - wszystkie błędy 1-bitowe,
- *   - wszystkie błędy z nieparzystą liczbą bitów (bo wielomian ma czynnik x+1),
- *   - wszystkie serie (burst) błędów o długości <= 8 bitów,
- *   - dłuższe serie / losowe błędy z prawdopodobieństwem ok. 1 - 1/256 (99,6%).
+package Detection;
+
+/*
+  CRC-8 (wariant CRC-8/SMBUS).
+ 
+  Parametry:
+    wielomian generujący: x^8 + x^2 + x + 1  ->  0x07
+                          (bit x^8 jest pomijany, bo zawsze = 1)
+    wartość początkowa:   0x00
+    XOR na końcu:         0x00
+    wartość kontrolna:    CRC("123456789") = 0xF4
+ 
+  Idea: dane traktujemy jako jeden długi wielomian binarny, dopisujemy 8 zer
+  i dzielimy (modulo 2, czyli XOR-em) przez wielomian generujący.
+  Reszta z dzielenia (8 bitów) to suma kontrolna.
+ 
+  Co wykrywa:
+    - wszystkie błędy 1-bitowe,
+    - wszystkie błędy z nieparzystą liczbą bitów (bo wielomian ma czynnik x+1),
+    - wszystkie serie (burst) błędów o długości <= 8 bitów,
+    - dłuższe serie / losowe błędy z prawdopodobieństwem ok. 1 - 1/256 (99,6%).
  */
 public class Crc8Detector implements ErrorDetector {
 

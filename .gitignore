@@ -1,0 +1,7 @@
+# Skompilowane klasy
+out/
+*.class
+
+# Pliki IntelliJ
+.idea/
+*.iml

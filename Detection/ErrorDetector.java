@@ -1,7 +1,9 @@
-/**
- * Wspólny interfejs dla wszystkich kodów detekcyjnych (parzystość, CRC8/16/32, Hamming).
- * Nadawca liczy sumę kontrolną przez calculate() i dopisuje ją do ramki,
- * odbiorca sprawdza ją przez verify().
+package Detection;
+
+/*
+  Wspólny interfejs dla wszystkich kodów detekcyjnych (parzystość, CRC8/32, Hamming).
+  Nadawca liczy sumę kontrolną przez calculate() i dopisuje ją do ramki,
+  odbiorca sprawdza ją przez verify().
  */
 public interface ErrorDetector {
 

@@ -1,3 +1,6 @@
+import Detection.ErrorDetector;
+
+
 public class ArqSystem {
     private Channel channel;
     private ErrorDetector detector;

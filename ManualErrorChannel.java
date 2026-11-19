@@ -1,15 +1,15 @@
 import java.util.Arrays;
 
-/**
- * Kanał testowy do Kroku 1: wprowadza deterministyczne przekłamania
- * na dokładnie wskazanych pozycjach bitowych ramki.
+/*
+  Kanał testowy do Kroku 1: wprowadza deterministyczne przekłamania
+  na dokładnie wskazanych pozycjach bitowych ramki.
  */
 public class ManualErrorChannel implements Channel {
     private final int[] errorPositions;
 
     /**
-     * @param positions pozycje bitów do odwrócenia (liczone od 0, od najstarszego bitu);
-     *                  brak argumentów oznacza kanał bezbłędny.
+      @param positions pozycje bitów do odwrócenia (liczone od 0, od najstarszego bitu);
+                       brak argumentów oznacza kanał bezbłędny.
      */
     public ManualErrorChannel(int... positions) {
         this.errorPositions = (positions != null) ? positions.clone() : new int[0];

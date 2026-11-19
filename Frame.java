@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import Detection.ErrorDetector;
+
 
 public class Frame {
     public static final byte DATA = 0;
